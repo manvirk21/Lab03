@@ -16,7 +16,10 @@ double sixMonthAverages[7];
 
 // This program sorts the sales data from highest to lowest and prints the sorted data.
 int main(void) {
-    FILE *file = fopen("sales.txt", "r");
+    char filename[100];
+    printf("Enter your file: ");
+    scanf("%s", filename);
+    FILE *file = fopen(filename, "r");
     // Checking if the file is empty.
     if (file == NULL) {
         // Printing the string to the console.
@@ -37,7 +40,7 @@ int main(void) {
     fclose(file);
 
     // Generate sales report
-    printf("Monthly Sales Report\n");
+    printf("\nMonthly Sales Report\n");
     printf("-----------------------------------\n");
     printf("Month\t\tSales\n");
     printf("-----------------------------------\n");
